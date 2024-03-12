@@ -37,7 +37,7 @@ public class ProdutoController {
     @PostMapping
     @RequestStatus(code = HttpStatus.CREATED)
     public Produto postProduto(@RequestBody Produto produto) {
-        // TODO: process POST request
+        
         log.info("Cadastrando produto {}", produto);
         repository.add(produto);
         return produto;
@@ -83,7 +83,7 @@ public class ProdutoController {
     // MÉTODO PUT
     @PutMapping("{id}")
     public ResponseEntity<Produto> updateProduto(@PathVariable Long id, @RequestBody Produto produto) {
-        // TODO: process PUT request
+        
         log.info("Atualizando produto com id {} para {}", id, produto);
         // Buscar o produto
         var produtoEncontrado = getProdutoById(id);
