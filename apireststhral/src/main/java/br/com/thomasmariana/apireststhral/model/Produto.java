@@ -1,6 +1,9 @@
 package br.com.thomasmariana.apireststhral.model;
 
 import jakarta.persistence.GeneratedValue;
+
+import java.math.BigDecimal;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -12,7 +15,7 @@ public class Produto {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String nome;
-    private double preco;
+    private BigDecimal preco;
     private double tela;
     private int armazenamento;
     private String cor;
