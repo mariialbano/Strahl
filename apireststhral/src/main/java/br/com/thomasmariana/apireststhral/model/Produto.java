@@ -11,19 +11,25 @@ import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+import lombok.Builder;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Produto {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    @NotBlank(message ="{produto.nome.notblank}")
-    @Size(min= 3, max = 255, message = "{produto.nome.size}")
+    @NotBlank(message ="Informe um nome")
+    @Size(min= 3, max = 255, message = "Nome inválido")
     private String nome;
 
     @Positive(message = "{produto.preco.positive}")
-    private BigDecimal preco;
+    private String preco;
 
     @Positive(message = "{produto.tela.positive}")
     private double tela;
